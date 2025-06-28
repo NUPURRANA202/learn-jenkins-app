@@ -8,6 +8,9 @@ pipeline {
                     image 'node:18-alpine'
                     reuseNode true
                 }
+                stage('Test'){
+                    echo "Test stage"
+                }
             }
             steps {
                 sh'''
@@ -19,15 +22,7 @@ pipeline {
                 ls -la
                 '''
             }
-        }
-        stage(Test){
-        agent{
-                docker{
-                    image 'node:18-alpine'
-                    reuseNode true
-                }
-            }
-        echo "Test stage"
+        
         }
     }
 }
