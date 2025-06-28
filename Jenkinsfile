@@ -28,6 +28,7 @@ pipeline {
                 }
             }
         echo "Test stage"
-    }
+        }
     }
 }
+
