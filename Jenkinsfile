@@ -25,13 +25,7 @@ pipeline {
         stage('Test'){
             steps{
                 sh '''
-                if [ -f build/index.html ]; then
-                  echo "build/index.html exists"
-                else
-                  echo "build/index.html does NOT exist"
-                  exit 1
-                fi
-                echo "Running test"
+                test -f build/index.html
                 npm test
                 '''
 
